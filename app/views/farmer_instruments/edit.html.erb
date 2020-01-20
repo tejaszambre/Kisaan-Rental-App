@@ -1,0 +1,18 @@
+Edit Farmer Instrument:
+
+<%= form_for @ads, scope: :farmer_instrument,  url: {action: "update"}, local: true do |form| %>
+  <p>
+    <%= form.label :Rent %><br>
+    <%= form.text_field :rent_per_hour%>
+  </p>
+
+  <p>
+    <%= form.label :Deposit %><br>
+    <%= form.text_area :deposit%>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>

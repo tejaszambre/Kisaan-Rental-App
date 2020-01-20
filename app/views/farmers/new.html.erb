@@ -1,0 +1,28 @@
+Add the Farmer Instrument:
+<%= form_with scope: :farmer,  url: farmers_path, local: true do |form| %>
+  <p>
+    <%= form.label :First_Name %><br>
+    <%= form.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= form.label :Last_Name %><br>
+    <%= form.text_area :last_name %>
+  </p>
+
+  <p>
+    <%= form.label :Mobile_Number %><br>
+    <%= form.text_area :mobile_number %>
+  </p>
+
+  <p>
+    <%= form.label :Email %><br>
+    <%= form.text_area :email %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+
+<% end %>

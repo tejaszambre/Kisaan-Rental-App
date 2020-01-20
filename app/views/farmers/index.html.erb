@@ -1,0 +1,20 @@
+<h1>Farmer Details</h1>
+<%= link_to 'Add new Farmer', new_farmer_path %>
+<table>
+    <tr>
+      <th><h2>Farmer Name</h2></th>
+      <th><h2>Mobile number</h2></th>
+      <th><h2>Email</h2></th>
+      <th><h2>View Detail</h2></th>
+      <th><h2>Edit Detail</h2></th>
+    </tr>
+    <% @farmers.each do |farmer| %>
+      <tr>
+        <td><h4><%= farmer.full_name %></td>
+        <td><h4><%= farmer.mobile_number %></td>
+        <td><h4><%= farmer.email %></td>
+        <td><h4><%= link_to 'View', farmer_path(farmer.id)%></h4></td>
+        <td><h4><%= link_to 'Edit', edit_farmer_path(farmer.id)%></h4></td>
+      </tr>
+    <% end %>
+</table>

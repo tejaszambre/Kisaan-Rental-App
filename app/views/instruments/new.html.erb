@@ -1,0 +1,23 @@
+Add the Instrument:
+<%= form_with scope: :instruments,  url: instruments_path, local: true do |form| %>
+  <p>
+    <%= form.label :Name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :Brand %><br>
+    <%= form.text_area :brand %>
+  </p>
+
+  <p>
+    <%= form.label :Specification %><br>
+    <%= form.text_area :specification %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+
+<% end %>

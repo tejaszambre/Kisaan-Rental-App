@@ -1,0 +1,20 @@
+<h1>Edit Instrument Info</h1>
+<%= form_for @instrument, scope: :instrument, url: {action: "update"}, local: true do |form| %>
+  <p>
+    <%= form.label :Name%>
+    <%= form.text_field :name%>
+  </p>
+  <p>
+    <%= form.label :Brand%>
+    <%= form.text_field :brand%>
+  </p>
+  <p>
+    <%= form.label :Specification%>
+    <%= form.text_field :specification%>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>

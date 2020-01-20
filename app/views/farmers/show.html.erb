@@ -1,0 +1,55 @@
+<h1>Details of Farmer</h1>
+<table>
+  <tr>
+    <th><h2>Farmer Name</h2></th>
+    <th><h2>Mobile number</h2></th>
+    <th><h2>Email</h2></th>
+    <th><h2>Address Line1</h2></th>
+    <th><h2>Address Line2</h2></th>
+    <th><h2>City</h2></th>
+    <th><h2>Pincode</h2></th>
+    <th><h2>State</h2></th>
+    <th><h2>Country</h2></th>
+  </tr>
+  <tr>
+    <td><h4><%= @farmer.full_name %></td>
+    <td><h4><%= @farmer.mobile_number %></td>
+    <td><h4><%= @farmer.email %></td>
+    <td><h4><%= @address.line1 %></td>
+    <td><h4><%= @address.line2 %></td>
+    <td><h4><%= @address.city %></td>
+    <td><h4><%= @address.pincode %></td>
+    <td><h4><%= @address.state %></td>
+    <td><h4><%= @address.country %></td>
+  </tr>
+</table>
+
+<h1>Rental Information</h1>
+<table>
+    <tr>
+        <th><h2>Farmer Name</h2></th>
+        <th><h2>Owned Instrument Count</h2></th>
+        <th><h2>Bowwored Instrument Count</h2></th>
+    </tr>
+        <tr>
+            <td><h4><%= @farmer.full_name %></td>
+            <td><h4><%= @farmer.farmer_instruments.count %></td>
+            <td><h4><%= @farmer.rents.count %></td>
+        </tr>
+</table>
+
+<h1>Advertise</h1>
+<table>
+    <tr>
+        <th><h2>Rent per hour</h2></th>
+        <th><h2>Deposit</h2></th>
+        <th><h2>Is Available</h2></th>
+    </tr>
+    <% @ads.each do |ad| %>
+        <tr>
+            <td><h4><%= ad.rent_per_hour %></td>
+            <td><h4><%= ad.deposit %></td>
+            <td><h4><%= ad.is_available %></td>
+        </tr>
+    <% end %>
+</table>

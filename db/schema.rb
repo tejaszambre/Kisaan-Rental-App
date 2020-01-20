@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_15_051430) do
+ActiveRecord::Schema.define(version: 2020_01_15_195823) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "line1"
+    t.string "line2"
+    t.string "city"
+    t.string "pincode"
+    t.integer "farmer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "state"
+    t.string "country"
+    t.index ["farmer_id"], name: "index_addresses_on_farmer_id"
+  end
+
+  create_table "farmer_instruments", force: :cascade do |t|
+    t.float "rent_per_hour"
+    t.boolean "is_available"
+    t.float "deposit"
+    t.datetime "next_available"
+    t.datetime "available_till"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "farmer_id"
+    t.integer "instrument_id"
+    t.index ["farmer_id"], name: "index_farmer_instruments_on_farmer_id"
+    t.index ["instrument_id"], name: "index_farmer_instruments_on_instrument_id"
+  end
 
   create_table "farmers", force: :cascade do |t|
     t.string "first_name"
@@ -18,6 +45,26 @@ ActiveRecord::Schema.define(version: 2020_01_15_051430) do
     t.string "mobile_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "specification"
+  end
+
+  create_table "rents", force: :cascade do |t|
+    t.date "from_date"
+    t.date "to_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "farmer_id"
+    t.integer "farmer_instrument_id"
+    t.index ["farmer_id"], name: "index_rents_on_farmer_id"
+    t.index ["farmer_instrument_id"], name: "index_rents_on_farmer_instrument_id"
   end
 
 end
