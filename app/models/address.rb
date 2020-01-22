@@ -12,5 +12,4 @@ class Address < ApplicationRecord
     self.country = self.country.titleize
   end
 
-
 end

@@ -1,6 +1,6 @@
 class Farmer < ApplicationRecord
   has_one :address, dependent: :destroy
-  has_many :instruments, through: :farmer_instruments 
+  has_many :instruments, through: :farmer_instruments
   has_many :farmer_instruments, dependent: :destroy
   has_many :rents
   has_many :rented_farmer_instruments, through: :rents, foreign_key: :farmer_instrument_id

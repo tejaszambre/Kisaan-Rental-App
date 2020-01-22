@@ -23,7 +23,7 @@ class InstrumentsController < ApplicationController
   end
 
   def update
-    byebug
+    # byebug
     @instrument = Instrument.find(params[:id])
     @instrument.update(permit_params)
     redirect_to instruments_path
